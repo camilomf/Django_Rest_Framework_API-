@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
 
-    'firstApp',
+    'api_basic',
 ]
 
 MIDDLEWARE = [

@@ -11,6 +11,3 @@ class CarSpecs(models.Model):
 
     def __str__(self):
         return self.car_model+" "+self.car_brand
-    
-
-
