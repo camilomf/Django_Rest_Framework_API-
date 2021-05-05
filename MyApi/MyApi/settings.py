@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
+    'corsheaders',
     
     'django.contrib.sites',
     'allauth',
@@ -49,12 +49,14 @@ INSTALLED_APPS = [
     'rest_auth.registration',
 
     'api_basic',
+    'api_heroes',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -132,6 +134,8 @@ SITE_ID = 1
 
 STATIC_URL = '/static/'
 
+CORS_ORIGIN_ALLOW_ALL = DEBUG
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # 'rest_framework.authentication.BasicAuthentication',
@@ -143,3 +147,4 @@ REST_FRAMEWORK = {
         #'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
